@@ -83,7 +83,7 @@ The NeRF training script must be updated in two crucial areas to ensure robust e
 1. Absolute Path Configuration (Required for Both)
 Update the following lines in your training script to use the correct absolute raw string paths for the input files. This is essential for preventing pathing errors. 
 As seen from the code below the NeRF training script is based on the intrinsics and poses gathered from the transforms.json file created with Colmap earlier.
-# UPDATE THESE PATHS IN YOUR NE RF SCRIPT
+# UPDATE THESE PATHS IN YOUR NeRF SCRIPT
 # Use r"" (raw string) to correctly handle Windows backslashes
 
 TRANSFORMS_FILE = r"C:\Users\YourUser\Desktop\nerf_test\transforms.json" 
