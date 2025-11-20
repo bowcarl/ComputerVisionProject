@@ -11,8 +11,8 @@ import numpy as np
 from segment_anything import sam_model_registry, SamAutomaticMaskGenerator
 
 # Paths
-#image_dir = r"Complete path to the images that needs their background removed"  # The image directory
-#output_dir = r"The directiry which the images should be outputted to"           # An empty directory
+image_dir = r"Complete path to the images that needs their background removed"  # The image directory
+output_dir = r"The directiry which the images should be outputted to"           # An empty directory
 
 os.makedirs(output_dir, exist_ok=True)
 
@@ -92,3 +92,4 @@ for fname in os.listdir(image_dir):
 
 
 print("All images processed successfully!")
+
