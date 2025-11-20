@@ -14,9 +14,6 @@ from segment_anything import sam_model_registry, SamAutomaticMaskGenerator
 #image_dir = r"Complete path to the images that needs their background removed"  # The image directory
 #output_dir = r"The directiry which the images should be outputted to"           # An empty directory
 
-image_dir = r"C:\Users\msgla\Documents\Oslo-met\3D-Vision\R2D2\images"  # The image directory
-output_dir = r"C:\Users\msgla\Documents\Oslo-met\3D-Vision\R2D2\images_black"           # An empty directory
-
 os.makedirs(output_dir, exist_ok=True)
 
 # Use GPU if available
@@ -24,7 +21,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 print("Using device:", device)
 
 # Load checkpoint used for background removal.
-# This file needs to be installed from Github under the section model checkpoints : https://github.com/facebookresearch/segment-anything.git
+# This file needs to be installed from GitHub under the section "Model checkpoints" from this link: https://github.com/facebookresearch/segment-anything.git
 sam_checkpoint = "sam_vit_h_4b8939.pth"
 sam = sam_model_registry["vit_h"](checkpoint=sam_checkpoint)
 sam.to(device)
@@ -92,5 +89,6 @@ for fname in os.listdir(image_dir):
     image_noback_bgr = cv2.cvtColor(image_noback, cv2.COLOR_RGB2BGR)
     cv2.imwrite(out_path, image_noback_bgr)
     print(f"Saved: {out_path}")
+
 
 print("All images processed successfully!")
